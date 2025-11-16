@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> দম্পতি(R & S)  (Animated)</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#031026;
+      --bg2:#072033;
+      --accent:#48e6c2;
+      --accent2:#7be1ff;
+      --warm:#ffb86b;
+      --card-bg: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Noto Sans Bengali',system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e8fbf9;-webkit-font-smoothing:antialiased}
+    .stage{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:36px}
+
+    .card{
+      width:min(1060px,96vw);
+      height:min(720px,86vh);
+      border-radius:16px;
+      display:grid;
+      grid-template-columns: 46% 54%;
+      overflow:hidden;
+      box-shadow: 0 30px 80px rgba(2,8,23,0.75);
+      border:1px solid rgba(255,255,255,0.03);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      position:relative;
+      transform: translateY(0);
+      animation:cardEntrance .7s cubic-bezier(.2,.9,.25,1) both;
+    }
+    @keyframes cardEntrance { from{ opacity:0; transform: translateY(18px) scale(.995)} to{opacity:1; transform:none} }
+
+    .photo-area{position:relative;background:#000}
+    .photo-area .img{
+      position:absolute; inset:0;
+      background-image: url('Kartick.jpg');
+      background-size: cover;
+      background-position: center;
+      transition: transform 600ms cubic-bezier(.2,.9,.25,1), filter 600ms;
+      will-change: transform;
+      filter: saturate(1.05) contrast(1.03) brightness(1.02);
+    }
+    .photo-area::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.06) 20%, rgba(0,0,0,0.55));
+      pointer-events:none;
+    }
+    .photo-area:hover .img{ transform: scale(1.06) translateY(-6px); filter: saturate(1.08) contrast(1.06) }
+
+    .halo{
+      position:absolute; width:240px; height:240px; left:18%; top:18%; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(72,230,194,0.14), transparent 30%);
+      filter: blur(12px); mix-blend-mode:screen; pointer-events:none; animation:haloPulse 4.2s infinite;
+    }
+    @keyframes haloPulse{ 0%{transform:scale(.94)}50%{transform:scale(1.06)}100%{transform:scale(.94)} }
+
+    .content{
+      padding:34px 42px;
+      display:flex; flex-direction:column; gap:18px; position:relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+    }
+    .meta{color:var(--accent); font-weight:700; letter-spacing:.5px; font-size:13px}
+    h1{font-size:26px; margin:6px 0 2px; color:#fff; line-height:1.05; text-shadow:0 10px 28px rgba(0,0,0,0.6)}
+    .subtitle{color:rgba(255,255,255,0.85); font-size:13px; margin-bottom:6px}
+    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent); margin:6px 0 14px}
+
+    .narrative{
+      flex:1; overflow:auto; padding-right:6px;
+      font-size:15px; line-height:1.72; color:rgba(230,247,245,0.96);
+    }
+    .narrative p{margin:0 0 12px; opacity:0; transform:translateY(8px); transition: all 520ms cubic-bezier(.2,.9,.25,1) }
+    .narrative p.visible{ opacity:1; transform:translateY(0) }
+
+    .name-bubble{
+      display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;
+      background: linear-gradient(90deg, rgba(72,230,194,0.06), rgba(123,225,255,0.03));
+      border:1px solid rgba(72,230,194,0.08); font-weight:800; color:var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.45)
+    }
+
+    .row{display:flex; gap:12px; align-items:center}
+    .btn{
+      padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
+      background:transparent; color:#dffbf6; font-weight:700; cursor:pointer;
+      transition: transform .18s ease, box-shadow .18s;
+    }
+    .btn:hover{ transform: translateY(-3px); box-shadow: 0 18px 40px rgba(2,8,23,0.55) }
+    .btn.primary{ background: linear-gradient(90deg,var(--accent), var(--accent2)); color:#022627; border:none }
+
+    .approved-logo{
+      width:130px;
+      margin:20px auto 0;
+      display:block;
+      opacity:0.9;
+    }
+
+    @media (max-width:920px){
+      .card{grid-template-columns:1fr; height:auto}
+      .photo-area{height:44vw; min-height:260px}
+      .content{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <section class="card" aria-label="MAYA Sabang animated card">
+
+      <div class="photo-area" role="img" aria-label="Sabang image">
+        <div class="img" aria-hidden="true"></div>
+        <div class="halo" aria-hidden="true"></div>
+      </div>
+
+      <div class="content">
+        <div>
+          <div class="meta">Sabang • West Medinipur</div>
+          <h1><span style="color:var(--accent)">দম্পতি(R & S)</span></h1>
+          <div class="subtitle">একটি আলাদা পরিচয়, একটি বর্ণিল কাহিনী</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="narrative" id="narrative">
+          <p> এক গ্রাম এ থাকতো এক দম্পতি(R & S)।</p>
+          <p> তাদের বিয়ে না হলেও কিন্তু সবসময় 24 ঘন্টা শুভ দৃষ্টি চলতো।</p>
+          <p> কিন্তু যখন  শুভদৃষ্টি এর DATE EXPIRY হয়ে গেলো তখনি কামনা হলো একটা নতুন PRODUCT এর।</p>
+<p>প্রচুর প্রচেষ্টা।  দিন রাত এক করেও ও হল না সেই PRODUCT বানানো।</p>
+          <p>সেই মুহূর্তে যখন এলো DEVORSE এর ঘূর্ণিঝড় তখন তার  হারামখোর বন্ধু গুলো তাকে তার সমস্যার জন্য দিলো একটা KARTICK ঠাকুর।</p>
+          <p> কিন্তু KARTICK ঠাকুর যে কোন বিক্রিয়া তে অনুঘটক হিসাবে যে কাজ করলো যে তার দুই দিন পর সেই লোক তা তার বন্ধুদের কে বললো যে সে তার মতো এক পিকাপসিল,  আমাদের মতো হারামখোর একটা PRODUCT বানি লিছে।</p>
+          <p> চারিদিকে ঢাক বাজানো হচ্ছে কিন্তু সেটা নুতুন PRODUCT বানানোর জন্য নয়।</p>
+          <p> ঢাক বাজানো হচ্ছে কারণ KARTICK ঠাকুর BIOLOGICALLY CERTIFIED !</p>
+        </div>
+
+        <img src="Approved.png" alt="APPROVED" class="approved-logo" />
+        <div><center><i><p>This is the power of lord KARTIK !</p><i></i></i></div></center>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:10px">
+          <div class="name-bubble">
+            <svg width="10" height="10" viewBox="0 0 10 10" style="margin-right:6px">
+              <circle cx="5" cy="5" r="5" fill="#ffb86b"></circle>
+            </svg>
+            দম্পতি(R & S)
+          </div>
+
+          <div class="row">
+            <button class="btn primary">শেয়ার করুন</button>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const ps = document.querySelectorAll('#narrative p');
+      ps.forEach((p,i)=>{
+        setTimeout(()=> p.classList.add('visible'), 250 + i*220);
+      });
+    })();
+  </script>
+</body>
+</html>

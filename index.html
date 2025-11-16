@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমার Vlog - </title>
+
+  <!-- Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* --- Base setup --- */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff);
+      color: #222;
+      overflow-x: hidden;
+      animation: fadeInBody 1.5s ease-in;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Header --- */
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #00bcd4, #3f51b5);
+      color: white;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 20%, transparent 20%);
+      background-size: 50px 50px;
+      animation: rotateBg 12s linear infinite;
+    }
+
+    @keyframes rotateBg {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    header img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      transition: transform 0.5s ease, box-shadow 0.4s ease;
+      position: relative;
+      z-index: 2;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    header img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255,255,255,0.7);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    header h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #e3f2fd;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Section --- */
+    section {
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 3px 25px rgba(0,0,0,0.1);
+      line-height: 1.7;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1.8s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    section h3 {
+      color: #2196f3;
+      border-left: 4px solid #2196f3;
+      padding-left: 10px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    section p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    /* --- Explore Button --- */
+    .explore-btn {
+      display: inline-block;
+      background: #2196f3;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(33,150,243,0.4);
+    }
+
+    .explore-btn:hover {
+      background: #1976d2;
+      box-shadow: 0 6px 18px rgba(33,150,243,0.6);
+      transform: translateY(-2px);
+    }
+
+    /* --- Social Links --- */
+    .social-links {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 12px;
+      color: #2196f3;
+      background: #e3f2fd;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a i {
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      background: #2196f3;
+      color: white;
+      box-shadow: 0 0 15px rgba(33,150,243,0.6);
+      transform: translateY(-2px);
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
+      background: #f1f1f1;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      transition: background 0.5s;
+    }
+
+    footer:hover {
+      background: #e3f2fd;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="AS.png" alt="Maya Mondal">
+    <U><h1>দেশে নিজের মতো হারামখোর Product বানানোর আসক্তি</h1></U>
+  </header>
+
+  <section>
+    <h3>দম্পতি(R & S)সম্পর্কে</h3>
+    <p>হাই!   <b>আমরা দম্পতি(R & S)।</b>আমাদের Product উৎপন্ন নিয়ে যে HISTORY তা আজ তোমাদের সাথে SHARE করবো 
+
+    <!-- Explore Now Button -->
+   <center><a href="explore.html" class="explore-btn">🌸 Explore Now</a></center>
+
+    <h3>📞 যোগাযোগ</h3>
+    <p>আমাদের সাথে যুক্ত থাকতে পারো নিচের লিঙ্কগুলোতে:</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://www.instagram.com/i_am_your_rup/"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 দম্পতি(R & S) | All Rights Reserved 🌸
+  </footer>
+
+</body>
+</html>
